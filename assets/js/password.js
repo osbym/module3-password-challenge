@@ -12,6 +12,47 @@ let generatedPass = [];
 let passArray = [];
 
 
+//WHEN I click the button to generate a password THEN I select which criteria to include in the password
+// GET REFERENCES TO THE #generate ELEMENT
+// Taken from Source Code
+var generateBtn = document.querySelector("#generate");
+let passwordChar = document.querySelector("password");
+
+//WHEN prompted for the length of the password THEN I choose a length between 8 and 128 characters
+function generatePass() {
+    let charLength = prompt("Please choose a password length between 8 and 128 characters.");
+}
+    // ALERT - "Plese choose password between 8 and 128 characters"
+    charLength=parseInt (charLength);
+    if (charLength >= 8 && charLength <= 128) {
+        passArray = [];
+        generatedPass = [];
+    }
+
+//WHEN User enters nothing OR a length less than 8 characters OR more than 128 characters then they'll recieve an ALERT
+if ((incLowercaseOptions === false) && (incUppercaseOptions ===false) && (incNumericOptions === false) && (incSpecialOptions === false) {
+    randomOutput.innerHTML = "Invalid Entry - Please select a character length between 8 and 128 characters.";
+} 
+} else 
+{
+    randomOutput.innerHTML = "Please choose a password length between 8 and 128 characters.";
+}
+
+   
+//CREATE loop for the number of characters that the user will select
+for (let i = 0; i < charLength; i++) {
+    let charArray = Math.floor(Math.random() * passArray.length);
+    generatedPassword.push(passArray[randomArray]);
+};
+    return generatedPassword.join(' ');
+    };
+
+
+
+
+
+
+
 
 // List out functions to get random characters from each array
 function specialRandom() {
@@ -60,9 +101,6 @@ return charLength;
 
 
 
-
-// GET REFERENCES TO THE #generate ELEMENT
-var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
