@@ -15,7 +15,7 @@ let passArray = [];
 // GET REFERENCES TO THE #generate ELEMENT
 // Taken from Source Code
 var generateBtn = document.querySelector("#generate");
-let passwordChar = document.querySelector("password");
+let passwordChar = document.querySelector("#password");
 let passwordDisplay = document.getElementById("passwordDisplay");
 
 //WHEN prompted for the length of the password THEN I choose a length between 8 and 128 characters
@@ -23,10 +23,10 @@ function generatePassword () {
     let charLength = prompt("Please choose a password length between 8 and 128 characters.");
 }
     // ALERT - "Plese choose password between 8 and 128 characters"
-    charLength=parseInt (charLength);
+    charLength= parseInt (charLength);
     if (charLength >= 8 && charLength <= 128) {
         passArray = [];
-        generatedPass = [];
+        generatedPassword = [];
 
 
 //CONFIRM whether or not to include lower, upper, numeric, and/or special characters
