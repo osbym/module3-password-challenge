@@ -1,12 +1,17 @@
-// Assignment code here
-// Acceptance Criteria - GIVEN I need a new, secure password
-// Global Variables for the functions
+// Assignment code here - Password Generator
+
+
+// Declare variables or arrays below.
 // When asked for lower, upper, numeric and character types to include in the password//
 
-var lowercaseOptions = "abcdefghijklmnopqrstuvwxyz";
-var uppercaseOptions = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-var numericOptions= "0123456789";
-var specialOptions = "!@#$%&?*+=";
+let lowercaseOptions = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+let uppercaseOptions = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+let numericOptions = ["0","1","2","3","4","5","6","7","8","9"];
+let specialOptions = ["!","@","#","$","%","&","?","*","+","="];
+let generatedPass = [];
+let passArray = [];
+
+
 
 // List out functions to get random characters from each array
 function specialRandom() {
@@ -29,9 +34,8 @@ function numberRandom() {
     return randomOutput;
 }
 
-
 // When I click the button I'm presented with a series of prompts for password criteria
-var charLength;
+var charLength = document.querySelector("#charLength").value;
 function choosecharLength () {
 // Ask user the number of characters they'd like to chose between 8 and 128//
 choosecharLength = prompt ("Please choose a password length between 8 and 128 characters.");
