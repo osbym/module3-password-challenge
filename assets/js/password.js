@@ -3,11 +3,11 @@
 // When asked for lower, upper, numeric and character types to include in the password//
 //Data needed to store the arrays
 
-let lowercaseOptions = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+let lowerCaseOptions = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 let uppercaseOptions = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 let numericOptions = ["0","1","2","3","4","5","6","7","8","9"];
 let specialOptions = ["!","@","#","$","%","&","?","*","+","="];
-let generatedPass = [];
+let generatedPassword = [];
 let passArray = [];
 
 
@@ -15,18 +15,21 @@ let passArray = [];
 // GET REFERENCES TO THE #generate ELEMENT
 // Taken from Source Code
 var generateBtn = document.querySelector("#generate");
-let passwordChar = document.querySelector("#password");
-let passwordDisplay = document.getElementById("passwordDisplay");
+let passwordText = document.querySelector("#password");
+let randomOutput = document.getElementById("randomOutput");
+
 
 //WHEN prompted for the length of the password THEN I choose a length between 8 and 128 characters
 function generatePassword () {
     let charLength = prompt("Please choose a password length between 8 and 128 characters.");
 }
     // ALERT - "Plese choose password between 8 and 128 characters"
-    charLength= parseInt (charLength);
+    charLength = parseInt(charLength);
     if (charLength >= 8 && charLength <= 128) {
         passArray = [];
         generatedPassword = [];
+
+    
 
 
 //CONFIRM whether or not to include lower, upper, numeric, and/or special characters
@@ -38,22 +41,23 @@ let incSpecialOptions = confirm("Want to include special characters in your pass
 
 //CONFIRM what the user as selected - CONCAT back to the array
 if (incLowerCaseOptions === true) {
-    passArray = passArray.concat(lowercaseoptions);
+    passArray = passArray.concat(lowerCaseOptions); 
 }
 if (incUpperCaseOptions === true) {
-    passArray = passArray.concat(uppercaseoptions);
+    passArray = passArray.concat(uppercaseOptions);
 }
 if (incNumericOptions === true) {
-    passArray = passArray.concat(numericoptions);
+    passArray = passArray.concat(numericOptions);
 }
 if (incSpecialOptions === true) {
-    passArray = passArray.concat(specialoptions);
+    passArray = passArray.concat(specialOptions);
 }
 
     
 
+
 //WHEN User enters nothing OR a length less than 8 characters OR more than 128 characters then they'll recieve an ALERT
-if ((incLowercaseOptions === false) && (incUppercaseOptions ===false) && (incNumericOptions === false) && (incSpecialOptions === false)) {
+if ((incLowerCaseOptions === false) && (incUpperCaseOptions ===false) && (incNumericOptions === false) && (incSpecialOptions === false)) {
     randomOutput.innerHTML = "Invalid Entry - Please select a character length between 8 and 128 characters.";
 } 
 } else {
@@ -65,12 +69,16 @@ if ((incLowercaseOptions === false) && (incUppercaseOptions ===false) && (incNum
 for (let i = 0; i < charLength; i++) {
     let charArray = Math.floor(Math.random() * passArray.length);
     generatedPassword.push(passArray[charArray]);
-};
-    return generatedPassword;
+ };
+    return generatedPassword.join(' ');
 
 
 
-    // Write password to the #password input
+
+
+    
+
+// Write password to the #password input
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
