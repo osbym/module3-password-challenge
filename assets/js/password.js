@@ -10,7 +10,6 @@ let specialOptions = ["!","@","#","$","%","&","?","*","+","="];
 let generatedPassword = [];
 let passArray = [];
 
-
 //WHEN I click the button to generate a password THEN I select which criteria to include in the password
 // GET REFERENCES TO THE #generate ELEMENT
 // Taken from Source Code
@@ -29,9 +28,6 @@ function generatePassword () {
     if (charLength >= 8 && charLength <= 128) {
         passArray = [];
         generatedPassword = [];
-
-    
-
 
 //CONFIRM whether or not to include lower, upper, numeric, and/or special characters
 //WHEN I answer each prompt THEN MY input should be validated and at least one character type is selected
@@ -57,17 +53,13 @@ if (incSpecialOptions === true) {
     passArray = passArray.concat(specialOptions);
 }
 
-    
-
-
 //WHEN User enters nothing OR a length less than 8 characters OR more than 128 characters then they'll recieve an ALERT
 if ((incLowerCaseOptions === false) && (incUpperCaseOptions ===false) && (incNumericOptions === false) && (incSpecialOptions === false)) {
     generatorHeader.innerHTML = "Invalid Entry - Please select a character length between 8 and 128 characters.";
-} 
+  } 
 } else {
     generatorHeader.innerHTML = "Please choose a password length between 8 and 128 characters.";
 }
-
 
 //CREATE loop for the number of characters that the user will select
 for (let i = 0; i < charLength; i++) {
@@ -76,21 +68,12 @@ for (let i = 0; i < charLength; i++) {
  }; 
     return generatedPassword.join();
 
-
-
-
-
-
-
-    
-
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-
 }
 
 // Add event listener to generate button
