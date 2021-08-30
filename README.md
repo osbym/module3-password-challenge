@@ -54,4 +54,6 @@ THEN the password is either displayed in an alert or written to the page
 
 ## Mock Up
 
-(( INSERT PICTURE OF WEB APPLICATION'S APPEARANCE AND FUNCTIONALITY ))
+![image](https://user-images.githubusercontent.com/87884472/131278478-0d2b2324-67f5-44b1-8ac4-f402f0fd2303.png)
+
+
